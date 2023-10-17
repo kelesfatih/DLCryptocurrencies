@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def get_historic_price(pair, exchange, after, periods):
-    url = 'https://api.cryptowat.ch/markets/{exchange}/{pair}/ohlc'.format(
+    url = "https://api.kraken.com/0/public/OHLC?pair={pair}".format(
         pair=pair, exchange=exchange)
     resp = requests.get(url, params={
         'periods': periods,
@@ -20,6 +20,6 @@ def get_historic_price(pair, exchange, after, periods):
 
 
 if __name__ == "__main__":
-    btc = get_historic_price(pair='btcusdt', exchange='binance', after="2023-08-01", periods="14400")
+    btc = get_historic_price(pair='XBTUSD', exchange='kraken', after="2023-08-01", periods="14400")
     print(btc)
     print(btc.loc["2023-09-29 04:00:00"])
