@@ -14,6 +14,6 @@ def candle_382(high, low, open, close, date, percentage=0.382):
         if open < rc_frl:
             return f"Selling pressure at the {int(14400) // 3600}-hour candle on {date}."
     # no pattern
-    return "No 38.2% Candlestick Pattern"
+    return "No 38.2% Candlstick Pattern"
 
 

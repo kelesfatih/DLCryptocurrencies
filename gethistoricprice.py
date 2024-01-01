@@ -22,4 +22,4 @@ def get_historic_price(pair, exchange, after, periods):
 if __name__ == "__main__":
     btc = get_historic_price(pair='XBTUSD', exchange='kraken', after="2023-08-01", periods="14400")
     print(btc)
-    print(btc.loc["2023-09-29 04:00:00"])
+    print(btc.loc["2023-09-29 08:00:00"])
