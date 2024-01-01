@@ -1,13 +1,12 @@
-import gethistoricprice
+import get_ohlc_data
 import candle382
 import pandas as pd
 
 
 def time_ranges():
     today_date = pd.Timestamp.now().date()
-    date_range = pd.date_range(end=today_date, periods=18, freq="4H")
-    btc_his_price = gethistoricprice.get_historic_price(pair="btcusdt", exchange="binance",
-                                                          after=date_range[0], periods="14400")
+    date_range = pd.date_range(end=today_date, periods=3, freq="24H")
+    btc_his_price = get_ohlc_data.get_historic_price(pair='XBTUSD', interval=1440, since="2024-01-01")
     results = []
     for i in date_range:
         high_price = btc_his_price.loc[i]["HighPrice"]

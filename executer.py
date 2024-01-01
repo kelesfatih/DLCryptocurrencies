@@ -4,11 +4,11 @@ import timeranges
 
 
 def printer():
-    print(timeranges.time_ranges())
+    [print(i) for i in timeranges.time_ranges()]
 
 
 printer()
-schedule.every(0.1).minutes.do(printer)
+schedule.every(0.10).minutes.do(printer)
 while True:
     schedule.run_pending()
     time.sleep(0.01)
