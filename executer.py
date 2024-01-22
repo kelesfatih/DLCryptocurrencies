@@ -1,10 +1,10 @@
 import schedule
 import time
-import timeranges
+import time_ranges
 
 
 def printer():
-    [print(i) for i in timeranges.time_ranges()]
+    [print(i) for i in time_ranges.time_ranges()]
 
 
 printer()
