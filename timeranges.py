@@ -10,7 +10,7 @@ def time_ranges():
     results = []
     for i in date_range:
         high_price = btc_his_price.loc[i]["HighPrice"]
-        low_price = btc_his_price.loc[i]["LowPrice"]
+        low_price = btc_his_price.loc[i]["LowPice"]
         open_price = btc_his_price.loc[i]["OpenPrice"]
         close_price = btc_his_price.loc[i]["ClosePrice"]
         c382 = candle382.candle_382(high=high_price, low=low_price, open=open_price, close=close_price, date=i)
