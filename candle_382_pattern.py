@@ -1,3 +1,4 @@
+# https://www.dailyfx.com/education/candlestick-patterns/inverted-hammer.html
 def candle_382(hp, lp, op, cp, date, percentage=0.382):
     hp, lp, op, cp = float(hp), float(lp), float(op), float(cp)
     # green candle
