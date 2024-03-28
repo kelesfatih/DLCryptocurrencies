@@ -19,6 +19,7 @@ def get_historic_price(pair, interval, since):
     return df
 
 
+# Interval in minutes
 if __name__ == "__main__":
-    btc = get_historic_price(pair='XBTUSD', interval=1440, since="2024-01-01")
+    btc = get_historic_price(pair='XBTUSD', interval=240, since="2024-03-25")
     print(btc)

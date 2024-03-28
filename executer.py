@@ -8,7 +8,7 @@ def printer():
 
 
 printer()
-schedule.every(0.10).minutes.do(printer)
+schedule.every(1).minutes.do(printer)
 while True:
     schedule.run_pending()
     time.sleep(0.01)
