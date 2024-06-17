@@ -2,9 +2,10 @@ import requests
 import pandas as pd
 import numpy as np
 import datetime
+import server_time
 
 # Get today's date
-today = datetime.datetime.now()
+today = server_time.get_server_time()
 # Calculate 720 days ago
 days_ago = today - datetime.timedelta(days=720)
 

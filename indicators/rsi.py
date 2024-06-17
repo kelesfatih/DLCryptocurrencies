@@ -1,11 +1,11 @@
 import ohlc_data
 import pandas as pd
-from ta.momentum import RSIIndicator
+from ta.momentum import rsi
 
 
 def rsi_indicator(data_frame, window=14, fillna=False):
     data_frame["ClosePrice"] = pd.to_numeric(data_frame["ClosePrice"])
-    return RSIIndicator(data_frame["ClosePrice"], window=window, fillna=fillna).rsi()
+    return rsi(data_frame["ClosePrice"], window=window, fillna=fillna)
 
 
 if __name__ == "__main__":
