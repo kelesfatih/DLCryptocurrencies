@@ -1,9 +1,15 @@
 import requests
 import pandas as pd
 import numpy as np
+import datetime
+
+# Get today's date
+today = datetime.datetime.now()
+# Calculate 720 days ago
+days_ago = today - datetime.timedelta(days=720)
 
 
-def get_ohlc_data(pair, interval, since):
+def get_ohlc_data(pair, interval, since=days_ago):
     # URL of API
     url = f"https://api.kraken.com/0/public/OHLC?"
     # Requesting data from API
@@ -29,10 +35,10 @@ def get_ohlc_data(pair, interval, since):
 
 # Testing the function
 if __name__ == "__main__":
-    asset_pairs_names_array = np.load('asset_pairs_names.npy')
+    asset_pairs_names_array = np.load('usdt_pairs.npy')
     for i in range(len(asset_pairs_names_array)):
         try:
-            test_data = get_ohlc_data(pair=asset_pairs_names_array[i], interval=1440, since="2024-06-10")
+            test_data = get_ohlc_data(pair=asset_pairs_names_array[i], interval=1440)
             if test_data is not None:
                 print(test_data)
         except Exception as e:

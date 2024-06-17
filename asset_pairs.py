@@ -24,6 +24,15 @@ def get_asset_pairs_names():
     return asset_pairs_names
 
 
+# Getting USD pairs from Kraken API
+def get_usdt_pairs():
+    asset_pairs = get_asset_pairs()
+    usdt_pairs = np.array([i['wsname'] for i in asset_pairs.values() if 'wsname' in i and 'USDT' in i['wsname']])
+    # Save the numpy array to a file
+    np.save('usdt_pairs.npy', usdt_pairs)
+    return usdt_pairs
+
+
 # Testing the function
 if __name__ == "__main__":
     asset_pairs_names_array = np.load('asset_pairs_names.npy')
