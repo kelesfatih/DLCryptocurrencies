@@ -1,11 +1,8 @@
-from spot_market_data import ohlc_data
-import pandas as pd
 from ta.volume import force_index
+from spot_market_data import ohlc_data
 
 
 def force_index_indicator(data_frame, window=13, fillna=False):
-    data_frame["ClosePrice"] = pd.to_numeric(data_frame["ClosePrice"])
-    data_frame["Volume"] = pd.to_numeric(data_frame["Volume"])
     return force_index(data_frame["ClosePrice"], data_frame["Volume"],
                        window=window, fillna=fillna)
 

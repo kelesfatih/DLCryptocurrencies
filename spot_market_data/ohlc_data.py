@@ -30,6 +30,7 @@ def get_ohlc_data(pair, interval, since=days_ago):
     df["CloseTime"] = pd.to_datetime(df["CloseTime"], unit="s")
     # Setting index to CloseTime
     df.set_index("CloseTime", inplace=True)
+    df = df.apply(pd.to_numeric, errors="coerce")
     return df
 
 

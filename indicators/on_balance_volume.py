@@ -1,11 +1,8 @@
-from spot_market_data import ohlc_data
-import pandas as pd
 from ta.volume import on_balance_volume
+from spot_market_data import ohlc_data
 
 
 def obv_indicator(data_frame, fillna=False):
-    data_frame["ClosePrice"] = pd.to_numeric(data_frame["ClosePrice"])
-    data_frame["Volume"] = pd.to_numeric(data_frame["Volume"])
     return on_balance_volume(data_frame["ClosePrice"], data_frame["Volume"], fillna=fillna)
 
 

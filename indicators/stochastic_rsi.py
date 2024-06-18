@@ -1,10 +1,8 @@
-from spot_market_data import ohlc_data
-import pandas as pd
 from ta.momentum import StochRSIIndicator
+from spot_market_data import ohlc_data
 
 
 def stochastic_rsi_indicator(data_frame, window=14, smooth1=3, smooth2=3, fillna=False):
-    data_frame["ClosePrice"] = pd.to_numeric(data_frame["ClosePrice"])
     stoch_rsi_object = StochRSIIndicator(data_frame["ClosePrice"], smooth1=smooth1, smooth2=smooth2,
                                          window=window, fillna=fillna)
     return stoch_rsi_object.stochrsi(), stoch_rsi_object.stochrsi_d(), stoch_rsi_object.stochrsi_k()

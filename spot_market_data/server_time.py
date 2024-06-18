@@ -12,7 +12,7 @@ def get_server_time():
     # Extracting data from response
     data = resp.json()
     # Converting timestamp to datetime
-    server_time = pd.to_datetime(data["result"]["unixtime"], unit="s")
+    server_time = pd.to_datetime(data["result"]["unixtime"], unit="s").date()
     return server_time
 
 
