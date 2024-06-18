@@ -1,4 +1,4 @@
-import ohlc_data
+from spot_market_data import ohlc_data
 import pandas as pd
 from ta.volume import on_balance_volume
 

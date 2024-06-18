@@ -1,8 +1,7 @@
 import requests
 import pandas as pd
-import numpy as np
 import datetime
-import server_time
+from spot_market_data import server_time
 
 # Get today's date
 today = server_time.get_server_time()
@@ -36,11 +35,4 @@ def get_ohlc_data(pair, interval, since=days_ago):
 
 # Testing the function
 if __name__ == "__main__":
-    asset_pairs_names_array = np.load('usdt_pairs.npy')
-    for i in range(len(asset_pairs_names_array)):
-        try:
-            test_data = get_ohlc_data(pair=asset_pairs_names_array[i], interval=1440)
-            if test_data is not None:
-                print(test_data)
-        except Exception as e:
-            print(f"Skipping {asset_pairs_names_array[i]} due to error: {e}")
+    print(get_ohlc_data(pair="BTC/USDT", interval=1440))
