@@ -8,9 +8,9 @@ class ScoringMatrix:
         self.score = 0
 
     def rsi_scoring(self):
-        if rsi.rsi_indicator(self.data_frame).loc[str(server_time.get_server_time())] < 30:
+        if rsi.rsi_indicator(self.data_frame).loc[str(server_time.get_server_time())] <= 30:
             self.score += 1
-        elif rsi.rsi_indicator(self.data_frame).loc[str(server_time.get_server_time())] > 70:
+        elif rsi.rsi_indicator(self.data_frame).loc[str(server_time.get_server_time())] >= 70:
             self.score -= 1
         return self.score
 
