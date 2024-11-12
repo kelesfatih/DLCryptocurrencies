@@ -1,1 +1,1 @@
-This collection of scripts request spot market data from stock market, Kraken, API and make some indicator calculations. This was intented to be a personal tutorial on API request and data handling. I don't know whether or not I will continue to develop.
+
