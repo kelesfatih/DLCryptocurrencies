@@ -86,3 +86,5 @@ def ohlc_data(pair, interval, since=None):
     df = df.apply(pd.to_numeric, errors="coerce")
     return df
 
+if __name__ == "__main__":
+    print("main")
